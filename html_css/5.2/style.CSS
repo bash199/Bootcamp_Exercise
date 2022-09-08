@@ -1,0 +1,27 @@
+.card {
+   background-color:beige ;
+   width:350px;
+   height: 350px;
+   border-style: solid;
+   border-color: beige;
+}
+
+.card img {
+
+}
+
+.container h1 {
+   line-height: 0px;
+   padding-left: 5px;
+   
+   
+}
+.container p {
+   padding-left: 5px;
+   font-size: large ;
+   
+}
+.card a {
+   padding-left: 5px;
+
+}

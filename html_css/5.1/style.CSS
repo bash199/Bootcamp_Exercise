@@ -1,0 +1,22 @@
+.Hello1 p {
+   font-size: 1.6em;
+   border-color: red;
+   border-style: solid;
+   border-radius: 15px;
+   border-width: 2px;
+   
+}
+
+
+.Hello2 p {
+   font-style: italic;
+   
+   font-weight: bold;
+   
+}
+.Hello3 p {
+   color :white;
+   background-color: black;
+   font-family: 'Courier New', Courier, monospace;
+   box-shadow: inset;
+}
