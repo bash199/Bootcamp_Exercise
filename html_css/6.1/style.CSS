@@ -1,0 +1,46 @@
+*{
+   box-sizing: border-box;
+}
+.container{
+   max-width: 960px;
+   margin: auto ;
+   padding: 5px  ; 
+}
+#box{
+   border: 1px solid #333;
+   padding: 20px;
+   margin: 5px   auto;
+}
+.header{
+   text-align: center;
+   background: orange;
+   width: 100% ;
+
+}
+.side{
+   text-align: start;
+   background: green;
+   width: calc(40% - 5px);
+   float: left;
+   height: 150px;
+   
+   
+
+}
+.main{
+   text-align:  end ;
+   background: purple;
+   width: calc(60% - 5px);
+   float: right;
+   height: 150px;
+   
+}
+.clr{
+   clear: both;
+}
+.footer{
+   text-align: center;
+   background: blue;
+   width: calc(100% - 1px);
+   
+}

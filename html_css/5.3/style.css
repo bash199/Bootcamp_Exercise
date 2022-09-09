@@ -1,40 +1,43 @@
 .Body{
-   box-shadow: 0 4px 8px 0 burlywood;
 
-   background-color: gray;
+   border-radius: 10px;
+   background: gray  ;
    color: beige;
-   padding: 0px 10px;
+   padding: 0 10px;
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-   width: fit-content;
+   max-width: 600px;
+
 
 }
-.main-header{
-   
-   box-shadow: 0 4px 8px 0 burlywood;
-   width: fit-content;
-   
+.main-header h1{
 
 }
 .about{
-   box-shadow: 0 4px 8px 0 burlywood ;
-   width: fit-content;
+
+
+
 
 }
-.image{
-   padding: 10px;
+.image {
+
+
+}
+.image img{
 
 
 }
 .discreption{
-   box-shadow: 0 4px 8px 0 burlywood;
-   width: fit-content;
+
+
+
 
 
 }
 
 .header{
-   box-shadow: 0 4px 8px 0 burlywood;
-   width: fit-content;
+
+
+
 
 }
 
