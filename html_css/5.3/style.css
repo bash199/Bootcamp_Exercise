@@ -8,22 +8,30 @@
 .main-header{
    
    box-shadow: 0 4px 8px 0 burlywood;
+   width: fit-content;
    
 
 }
 .about{
    box-shadow: 0 4px 8px 0 burlywood ;
+   width: fit-content;
+
 }
 .image{
    padding: 10px;
 
+
 }
 .discreption{
    box-shadow: 0 4px 8px 0 burlywood;
+   width: fit-content;
+
 
 }
 
 .header{
    box-shadow: 0 4px 8px 0 burlywood;
+   width: fit-content;
+
 }
 
