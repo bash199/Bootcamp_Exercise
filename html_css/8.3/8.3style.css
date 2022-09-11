@@ -1,0 +1,42 @@
+.main-div{
+   
+   width: 1000px;
+   height: 1000px;
+   position:relative;
+}
+.div-1{
+   width: 200px ;
+   height: 200px;
+   background: white;
+   border: 3px solid black;
+   position: absolute;
+   z-index: 1;
+}
+.div-2{
+   width: 150px ;
+   height: 200px;
+   background: white;
+   border: 3px solid black;
+   position: absolute;
+   z-index: 2;
+   top: 120px;
+   left:120px ;
+}
+.div-3{
+   width: 500px ;
+   height: 100px;
+   background: white;
+   border: 3px solid black;
+   position: absolute;
+   z-index: 3;
+   top: 320px;
+}
+.div-4{
+   width: 100px ;
+   height: 500px;
+   background: white;
+   border: 3px solid black;
+   position: absolute;
+   z-index: 4;
+   left:350px ;
+}
