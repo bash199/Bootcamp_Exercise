@@ -1,0 +1,99 @@
+*{
+   box-sizing: border-box;
+}
+body{
+   background: #483D8B;
+}
+div{
+   width: 70%;
+   margin: auto;
+
+}
+h3{
+   font-family: Arial, Helvetica, sans-serif;
+   color: white;
+   width: fit-content;
+   margin: 10px auto;
+   padding:20px ;
+   /* background:gray ; */
+
+
+
+}
+ul{
+
+   list-style: none;
+   width:60%;
+   margin: auto;
+   padding: 20px;
+}
+li{
+   padding: 0 65px 0 80px;
+   display: inline;
+
+}
+.btn-1 button{
+   padding: 12px;
+   background: #6495ED;
+   border: none;
+   font-size: large;
+   color: white;
+}
+
+.btn-2 button{
+   padding: 5px;
+   background: #FFD700;
+   border: none;
+   font-size: small;
+   color: white;
+}
+
+
+.btn-3 button{
+   padding: 12px;
+   background: #3CB371;
+   border-radius: 20px;
+   border: none;
+   font-size: large;
+   color: white;
+}
+.btn-4 button{
+   padding: 5px;
+   background: #CD5C5C;
+   border-radius: 20px  ;
+   border: none;
+   font-size: small;
+   color: white;
+}
+.btn-5 button{
+   padding: 12px;
+   background:none;
+   border: 2px solid #CD5C5C  ;
+   font-size: large;
+   color: white;
+}
+.btn-6 button{
+   padding: 5px;
+   background: none;
+   border: 2px solid #BA55D3;
+   font-size: small;
+   color: white;
+}
+.btn-7 button{
+   padding: 12px;
+   background:none;
+      /* border-radius: 20px ; */
+   border: 2px solid #DAA520  ;
+   font-size: large;
+   color: white;
+}
+.btn-8 button{
+   padding: 5px;
+   background: none;
+   border-radius: 20px ;
+   border: 2px solid #228B22;
+   font-size: small;
+   color: white;
+}
+
+
