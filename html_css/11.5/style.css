@@ -1,0 +1,102 @@
+*{
+   box-sizing: border-box;
+}
+body{
+   margin: 0;
+}
+@media  (min-width:421px) ,(min-height:421px)   { 
+   .navbar{
+      border: 2px solid #407088;
+      background:#ffcbcb;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   
+   }
+   .text{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: inline-block;
+      color:  #407088;
+      padding:2px;
+      margin:10px ;
+   }
+   .apple{
+      font-weight: bold;
+   
+   }
+}
+
+
+@media  (max-width:420px) ,(max-height:420px) {
+   .navbar{
+      border: 2px solid #407088;
+      background: #ffcbcb;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center ;
+      align-items: center;
+
+      /* flex-wrap: ; */
+
+   }
+   
+   .text{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: inline-block;
+      color: #132743;
+      padding:2px;
+      margin:10px ;
+      font-size: 1.5rem;
+   }
+   .links{
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      /* align-content: stretch; */
+      
+   }
+   .apple{
+      flex-grow: 0.25;
+   }
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .navbar{
+   border: 2px solid #407088;
+   background:#ffcbcb; 
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+}
+.text{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   display: inline-block;
+   color: #132743;
+   padding:2px;
+   margin:10px ;
+}
+.apple{
+   font-weight: bold;
+
+}
+
+ */
+
+

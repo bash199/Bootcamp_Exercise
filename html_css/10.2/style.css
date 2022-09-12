@@ -43,7 +43,7 @@ ul i{
 ul i:hover{
    color: black;
 } 
-
+/*media query*/
 @media (max-height:450px){
    #box{
       padding: 0;
@@ -64,6 +64,7 @@ ul i:hover{
    }
 
 }
+/*media query*/
 @media  (min-width:900px) and (min-height:510px){
    .container{
       border-radius: 5px;
@@ -107,7 +108,7 @@ ul i:hover{
    }
 }
 
-
+/*media query*/
 @media (max-width:520px){
    .container{
       border-radius: 5px;
@@ -150,13 +151,14 @@ ul i:hover{
       color: black;
    }
 }
-
+/*media query*/
 @media screen and (min-width: 320px) {
 
    html{
     font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+   }
 }
-}
+
 @media screen and (min-width: 1000px) {
    html {
       font-size: 26px;
