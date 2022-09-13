@@ -4,6 +4,7 @@
 body{
    margin: 0;
 }
+
 @media  (min-width:421px) ,(min-height:421px)   { 
    .navbar{
       border: 2px solid #407088;
@@ -34,11 +35,10 @@ body{
       display: flex;
       flex-direction: column;
       height: 100vh;
-      justify-content: center ;
+      justify-content: flex-start ;
       align-items: center;
-
-      /* flex-wrap: ; */
-
+      text-align: center;
+      
    }
    
    .text{
@@ -50,14 +50,13 @@ body{
       font-size: 1.5rem;
    }
    .links{
-      text-align: center;
+      /* text-align: center; */
       display: flex;
       flex-direction: column;
-      /* align-content: stretch; */
-      
    }
    .apple{
-      flex-grow: 0.25;
+      flex-grow: 0.05;
+      margin-top: 30px;
    }
 
 

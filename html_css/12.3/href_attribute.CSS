@@ -1,0 +1,26 @@
+body{
+   margin: 0;
+   padding: 0;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.box{
+   width:300px ;
+   height: 300px;
+   background: #ec7263;
+   position: relative;
+}
+.box::after{
+   content: '';
+   width:50% ;
+   height: 100%;
+   background: #febe7e;
+   position: absolute;
+   left:50% ;
+}
+.box:hover{
+   background: #57385c;
+}

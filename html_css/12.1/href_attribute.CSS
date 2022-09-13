@@ -1,0 +1,53 @@
+body{
+   margin: 0;
+   padding: 0;
+   background: #ffe4c9;
+   font-size:1.4rem ;
+}
+.sec{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   height:100vh ;
+   text-align: center;
+}
+.normal > a{
+   font-size: 1rem;
+   text-decoration: none;
+   color: #f70776;
+}
+.normal a::after{
+   content: '(' attr(href) ')' ; 
+   color: #f70776;
+   margin-left: 5px;
+   padding-top: 5px;
+}
+
+
+.good > a{
+   font-size: 1rem;
+   color: #e46161;
+   text-decoration: none;
+
+}
+.good a::after{
+   content: '(' attr(href) ')' ; 
+   color: #e46161; 
+   margin-left: 5px; 
+   padding-top: 5px; 
+}
+
+
+.great > a{
+   color: #004445; 
+   font-size: 1rem;
+   text-decoration: none;
+}
+.great a::after{ 
+   content: '(' attr(href) ')' ; 
+   color: #004445; 
+   margin-left: 5px; 
+   padding-top: 5px; 
+
+}
