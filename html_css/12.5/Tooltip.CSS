@@ -24,8 +24,7 @@ span[data-tooltip] {
    color: black;
    }
 
-   span[data-tooltip]:hover::after,
-   span[data-tooltip]:focus::after{
+   span[data-tooltip]:hover::after{
    content: attr(data-tooltip);
    position: absolute;
    left: 0;
@@ -37,7 +36,6 @@ span[data-tooltip] {
    background:#c7b198 ;
    padding: 12px;
    color: #000000;
-   /* cursor: help; */
    font-size: 14px;
    z-index: 1;
    }

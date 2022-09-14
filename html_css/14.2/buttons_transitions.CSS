@@ -1,0 +1,114 @@
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   --trans-color:#f1b963;
+}
+body{
+   background: #e46161;
+   margin: auto;
+   height: 400PX;
+   width: 500px;
+   display: flex;
+   justify-content: center;
+   align-items:center ;
+   flex-wrap: wrap;
+   font-family: Arial, Helvetica, sans-serif;
+   color: #f8f398;
+
+}
+.box{
+   overflow: hidden;
+   width: 150px;
+   height: 50px;
+   margin: 0 5px;
+   border: 1px solid  #272343;
+   text-align: center;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   z-index: 0;
+}
+p{
+   z-index: 2;
+}
+
+
+.transy::after{
+   position: absolute;
+   content:'';
+   width: 100%;
+   height: 100%;
+   transition: all 1s ease-in-out;
+   background-color: var(--trans-color);
+   transform: translateY(-100%);
+
+}
+.transy:hover::after{
+   transform: translateX(0);
+}.transx::after{
+   position: absolute;
+   content:'';
+   width: 100%;
+   height: 100%;
+   transition: all 1s ease-in-out;
+   background-color: var(--trans-color);
+   transform: translateX(-100%);
+   z-index: 1;
+}
+.transx:hover::after{
+   transform: translateX(0);
+}
+.rotate{
+   width: 100px;
+}
+.rotate::after{
+   position: absolute;
+   top: 0px;
+   right: 0px ;
+   content:'';
+   width:250px ;
+   height: 100%;
+   transition: all 1s ease-in-out;
+   background-color: var(--trans-color);
+   transform: rotate(90deg);
+
+}
+.rotate:hover::after{
+   transform: rotate(0);
+}
+.scale::before{
+   position: absolute;
+   content:'';
+   width: 100%;
+   height: 100%;
+   transition: all 1s ease-in-out;
+   background-color: var(--trans-color);
+   transform: Scale(0);
+}
+.scale:hover::before{
+   position: absolute;
+
+   transform: Scale(1);
+}
+
+
+.skew::after{
+   position: absolute;
+   content:'';
+   width: 100%;
+   height: 100%;
+   transition: all 0.5s ease-in-out;
+   transform: SkewX(0deg);
+}
+.skew:hover{
+
+   transform: skewY(20deg);
+}
+.skew:hover::after{
+   position: absolute;
+   background-color: var(--trans-color);
+   transform: skewY(10deg, 20deg)  ;
+}
+
