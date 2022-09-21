@@ -4,11 +4,20 @@
 // indexOf as part of your solution.
 let myArr = [3,4,4,3,6,3];
 let result=[];
+let c ={};
 for(let i=0; i<myArr.length;i++){
    if(result.indexOf(myArr[i])===-1){
       result.push(myArr[i]);
+      c[myArr[i]]=0;
    }
+   if(myArr.indexOf(myArr[i])!==-1){
+      
+      c[myArr[i]]=+1;
+   }
+   
+
 }
 
 console.log(myArr);
 console.log(result);
+console.log(c);
