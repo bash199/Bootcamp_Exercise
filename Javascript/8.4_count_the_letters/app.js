@@ -1,5 +1,5 @@
 const array = ["Hello", "Good Day", "Your","Welcome", "hotdog", "hamburgers"];
-let str = array.toString().toLocaleLowerCase().replaceAll(',','').replaceAll(' ','');
+// let str = array.toString().toLocaleLowerCase().replaceAll(',','').replaceAll(' ','');
 
 let count={};
 const func=(array)=>{
@@ -15,4 +15,4 @@ const func=(array)=>{
 }
 
 console.log(func(array));
-console.log(count);
+// console.log(count);
