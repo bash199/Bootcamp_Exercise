@@ -14,8 +14,13 @@ console.log('↓↓↓-sum-↓↓↓');
 //? 2. the sum of even numbers---------------
 
 let arr2 = [1,2,3,4,5,6,7,8,9,10]
-let sum2 =arr2.reduce((acc, cur) =>{return acc + cur});
-console.log(sum2)
+let sum2 =arr2.reduce((acc, cur) =>{
+   if( (cur % 2)===0){
+      return acc + cur;
+   }
+   return acc;
+},0);
+console.log(sum2);
 
 console.log('▬▬▬▬▬▬▬▬▬▬▬');
 
