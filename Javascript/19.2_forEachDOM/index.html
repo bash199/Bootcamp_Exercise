@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <script>
+      //  You get an array of objects of users from your database: 
+      const users = [
+      {
+         id: 167464,
+         firstName: "Jimmy",
+         lastName: "Arnold",
+         email: "jimmya@gmail.com",
+      },
+      {
+         id: 578447,
+         firstName: "Martha",
+         lastName: "Goldman",
+         email: "gold@hotmail.com",
+      },
+      {
+         id: 864578,
+         firstName: "Tim",
+         lastName: "Burton",
+         email: "timmy.hotmail.com",
+      },
+   ];
+   // 1. Loop over the array with the forEach method and dynamically create an ordered list of the first and last names of the objects.
+   const ol = document.createElement('ol');
+   users.forEach((el)=> {
+      ol.appendChild(document.createElement('li')).innerText=`${el.firstName} ${el.lastName}`
+   });
+   //  2. Remove the bullet points of the ordered list with JavaScript.
+   ol.style.listStyleType='none';
+   document.querySelector('body').appendChild(ol)
+   //  3. Create a custom data attribute called “data-id” and attach the id value to each li.
+   const att1 = document.createAttribute("data-id");
+   att1.value=users[0].id;
+   ol.firstElementChild.setAttributeNode(att1);
+   const att2 = document.createAttribute("data-id");
+   att2.value=users[1].id;
+   ol.firstElementChild.nextElementSibling.setAttributeNode(att2);
+   const att3 = document.createAttribute("data-id");
+   att3.value=users[2].id;
+   ol.lastElementChild.setAttributeNode(att3);
+   </script>
+</body>
+</html>
+<!-- 
+1. Loop over the array with the forEach method and
+dynamically create an ordered list of the first and last
+names of the objects.
+2. Remove the bullet points of the ordered list with
+JavaScript.
+3. Create a custom data attribute called “data-id” and attach
+the id value to each li. 
+-->
+
+
+
+
+
+
+
+
+
+

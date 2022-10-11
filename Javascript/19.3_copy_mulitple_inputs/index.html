@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div class="aa"> 
+   <label for=""></label>
+      <form action="">
+         <input type="text" maxlength="1"/>
+         <input type="text" maxlength="1"/>
+         <input type="text" maxlength="1"/>
+         <input type="text" maxlength="1"/>
+         <input type="text" maxlength="1"/>
+         <input type="text" maxlength="1"/>
+      </form>
+   </div>
+</body>
+<script>
+   const inputs = document.querySelector('form');
+   document.querySelector('label').innerHTML='Text to copy: <br> 123456';
+   const sub = document.createAttribute('type');
+   sub.value='submit'
+   const subbtn=document.querySelector('form').appendChild(document.createElement('input')).setAttributeNode(sub);
+   for(let i of inputs.children) {
+      i.style.width='15px'
+      i.onkeyup = function() {
+        if(i.value!=''&&i!==inputs.lastElementChild) {
+            i.nextElementSibling.focus();
+         } 
+      }
+   }
+   inputs.lastChild.style.width='60px'
+</script>
+</html>

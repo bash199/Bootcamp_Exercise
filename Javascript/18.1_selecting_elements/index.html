@@ -1,0 +1,52 @@
+<!-- inside the script tag do the following:
+Select all elements inside the body and store each element in a
+separate variable and print them to the console.
+1. Select all elements not using the querySelector method.
+2. Select all elements using querySelector method.
+3. Select all inputs and iterate over them with the forEach
+method and print each one to the console. Using both
+querySelectorAll and getElementsByTagName. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible"content="IE=edge" />
+   <meta name="viewport"content="width=device-width,initial-scale=1.0" />
+   <title>Document</title>
+</head>
+<body>
+   <h1>Header</h1>
+   <p>Paragraph</p>
+   <a href="#">link</a>
+   <img src="" alt="" />
+   <div class="x">Div with a class</div>
+   <div id="y">Div with an id</div>
+   <input type="text" />
+   <input type="text" />
+   <input type="text" />
+</body>
+<script>
+// 1. Select all elements not using the querySelector method.
+const body = document.body.children;
+[...body].forEach((el,i)=>{
+if(i>=0&&i<=8){
+      console.log(el)
+   }
+});
+// 2. Select all elements using querySelector method. 
+
+const Query = document.querySelectorAll('*');
+Query.forEach((el,i)=>{
+   if(i>=7&&i<=15){
+      console.log(el)
+   }
+});
+
+// 3.Select all inputs and iterate over them with the forEach
+// method and print each one to the console. Using both
+// querySelectorAll and getElementsByTagName.
+
+let arr = [...document.querySelectorAll('input')]
+arr.forEach(el=>console.log(el))
+</script>
+</html>

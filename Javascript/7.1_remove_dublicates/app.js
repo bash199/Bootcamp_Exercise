@@ -10,12 +10,9 @@ for(let i=0; i<myArr.length;i++){
       result.push(myArr[i]);
       c[myArr[i]]=0;
    }
-   if(myArr.indexOf(myArr[i])!==-1){
-      
+   else if(myArr.indexOf(myArr[i])!==-1){
       c[myArr[i]]=+1;
    }
-   
-
 }
 
 console.log(myArr);

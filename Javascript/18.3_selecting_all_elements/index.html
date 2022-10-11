@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <div id="myFirstDiv"></div>
+   <div id="mySecondDiv"></div>
+   <div id="myThridDiv"></div>
+   <div id="myFourthDiv"></div>
+</body>
+<script>
+   const myFirstDiv = document.querySelector("#myFirstDiv");
+   const mySecondDiv = document.querySelector("#mySecondDiv");
+   const myThirdDiv = document.querySelector("#myThirdDiv");
+   const myFourthDiv = document.querySelector("#myFourthDiv");
+   // ------------------
+   const allDivs = [...document.querySelectorAll("div")];
+   const myFirstDiv2 =allDivs[0];
+   const mySecondDiv2 =allDivs[1];
+   const myThirdDiv2 =allDivs[2];
+   const myFourthDiv2 =allDivs[3];
+</script>
+</html>
+<!-- Is there a better way you can store the individual elements
+with giving them different names? -->
