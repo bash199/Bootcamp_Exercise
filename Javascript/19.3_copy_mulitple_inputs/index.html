@@ -24,15 +24,17 @@
    document.querySelector('label').innerHTML='Text to copy: <br> 123456';
    const sub = document.createAttribute('type');
    sub.value='submit'
-   const subbtn=document.querySelector('form').appendChild(document.createElement('input')).setAttributeNode(sub);
-   for(let i of inputs.children) {
-      i.style.width='15px'
-      i.onkeyup = function() {
-        if(i.value!=''&&i!==inputs.lastElementChild) {
-            i.nextElementSibling.focus();
+   const subbtn=document.querySelector('form').appendChild(document.createElement('button')).setAttributeNode(sub);
+   for(let i=0; i< inputs.children.length-1;i++) {
+      inputs.children[i].style.width='15px'
+      inputs.children[i].onkeyup = function() {
+        if(inputs.children[i].value!=''&&inputs.children[i]!==inputs.children[i-1]) {
+         inputs.children[i].nextElementSibling.focus();
          } 
       }
    }
    inputs.lastChild.style.width='60px'
+
+
 </script>
 </html>
