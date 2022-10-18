@@ -20,4 +20,3 @@ function createSmiley (){
    image.setAttribute('src','smiley.png')
    return image
 }
-
