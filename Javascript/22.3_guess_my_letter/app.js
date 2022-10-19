@@ -1,4 +1,4 @@
-const form = document.querySelector('#form');
+// const form = document.querySelector('#form');
 const random = document.querySelector('#random');
 const guess = document.querySelector('#input-guess');
 const result = document.querySelector('#result');
@@ -12,38 +12,46 @@ let letter = randomLetters[index];
 appear.style.display='none';
 
 function guessMyLetter(event){
-   let input = event.target.value;
+   let input = event.key.toLowerCase();
    checkLetter(input,letter)
    addsToTheGuessedArray(input)
-   guess.value='';
-   // console.log(event);
 }
+
 function addsToTheGuessedArray(i){
-   if (!guessedLetters.includes(i)){
-      guessedLetters.push(i)
-      if(status){
-         fill.textContent += `${i},`
+   if(randomLetters.includes(i)){
+      if (!guessedLetters.includes(i)){
+         guessedLetters.push(i)
+         if(status){
+            fill.textContent += `${i}, `
+         }
       }
    }
 }
+
 function checkLetter(char,l){
-   if(l===char){
-      result.style.color='green';
-      result.textContent="Yep that's the right letter";
-      guess.style.display='none'
-      random.textContent=char;
-      status = false;
-      appear.style.display='block';
-   }
-   else if (guessedLetters.includes(char)){
-      console.log('already used this letter');
-      result.style.color='blue';
-      result.textContent='already used this letter';
+   if(randomLetters.includes(char)){
+      if(l===char){
+         result.style.color='green';
+         result.textContent="Yep that's the right letter";
+         guess.style.display='none'
+         random.textContent=char;
+         status = false;
+         appear.style.display='block';
+      }
+      else if (guessedLetters.includes(char)){
+         result.style.color='blue';
+         result.textContent='already used this letter';
+      }
+      else{
+         result.style.color='red';
+         result.textContent="nope, that's wrong letter";
+      }
    }
    else{
-      result.style.color='red';
-      result.textContent="nope, that's wrong letter";
+      result.style.color='yellow';
+         result.textContent="Only valid letters!";
+      
    }
-   
 }
-form.addEventListener('keyup',guessMyLetter)
+
+document.addEventListener('keyup',guessMyLetter)
