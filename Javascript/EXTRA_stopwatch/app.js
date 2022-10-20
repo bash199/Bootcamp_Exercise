@@ -25,11 +25,11 @@ function upTime(){
 
 function add(){
    upTime();
-   time.textContent = `${(min > 9 ? min : '0' + min)} : ${(sec > 9 ? sec : '0' + sec)} : ${(ms > 9 ? ms : '0' + ms)}`;
+   time.textContent = `${(min > 9 ? min : '0' + min)} : ${(sec > 9 ? sec : '0' + sec)} : ${(ms > 9 ? ms : '0'+ms)}`;
    tmr();
 }
 function tmr(){
-   foo = setTimeout(add, (1000 / 60));
+   foo = setTimeout(add, 1000 / 60 );
 }
 function stp(){
    clearTimeout(foo);
@@ -38,7 +38,7 @@ function rst(){
    ms = 0;
    sec = 0;
    min = 0;
-   time.textContent='00:00:00';
+   time.textContent='00 : 00 : 00';
 }
 
 start.addEventListener('click',tmr);
