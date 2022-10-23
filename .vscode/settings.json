@@ -2,5 +2,6 @@
    "editor.guides.highlightActiveBracketPair": false,
    "prettier.bracketSameLine": true,
    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
-   "typescript.format.placeOpenBraceOnNewLineForFunctions": true
+   "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
+   "liveServer.settings.port": 5501
 }
