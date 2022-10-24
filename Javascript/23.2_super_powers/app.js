@@ -16,4 +16,5 @@ function printSuperPower() {
    this.superPower);
 }
 
+storm.printSuperPower()
 
