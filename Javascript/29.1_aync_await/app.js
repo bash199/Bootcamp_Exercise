@@ -11,6 +11,9 @@ const getIDs = () =>
 //? We are getting a recipe as an object once consumed.
 const getRecipe = (recipeID) => {
    return new Promise((resolve, reject) => {
+      if(!Array.isArray(recipeID)){
+         reject('not array')
+      }
       setTimeout((ID) => {
          const recipe = {
             title: "Fresh tomato pasta",
@@ -35,10 +38,15 @@ const getRecipe = (recipeID) => {
 //       console.log("It is an error!");
 //    })
 async function returnId(){
-   const data = await getIDs()
-   console.log(data);
-   const data2 = await getRecipe(data[2])
-   console.log(data2);
+   try {
+      const data = await getIDs()
+      console.log(data);
+      const data2 = await getRecipe(data[2])
+      console.log(data2);
+   }
+   catch(e){
+      console.log(e);
+   }
 }
 returnId()
 //? The Task

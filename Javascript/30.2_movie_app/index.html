@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="app.js" defer></script>
+   <title>Movie app</title>
+   <style>
+      #user-input{
+         margin: 20px;
+      }
+      body{
+         background-color: teal;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         text-align: center;
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+      }
+      .container-image{
+         width: 300px;
+         height: 500px;
+         background-position: center center ;
+         background-repeat:no-repeat  ;
+         /* background-size: cover; */
+         display: grid;
+         grid-template-columns: repeat(1,1fr);
+         grid-template-rows: repeat(2,1fr);
+      }
+
+      
+   </style>
+</head>
+<body>
+   <div>
+      <h2>Movie app</h2>
+      <input id="user-input" type="text"/>
+      <button id="search" type="submit">Search</button>
+   </div>
+   <h4 class="movie-title"> </h4>
+   <p class="movie-genre"> </p>
+   <div class="container-image">
+   </div>
+   <p class="movie-year"></p>
+   <p class="movie-plot"></p>
+   <p class="movie-director"></p>
+   <p class="movie-actors"></p>
+   <p class="movie-IMDB"></p>
+   <p class="movie-RT"></p>
+   <p class="movie-Metacritic"></p>
+   
+   
+</body>
+</html>

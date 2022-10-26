@@ -7,16 +7,6 @@ const myarr2 =myarr.split(' ');
 // myarr2.push(1)
 // console.log(myarr2);
 
-function sortWords(arr){
-   return new Promise((resolve,reject)=>{
-      setTimeout(()=>{
-         if(Array.isArray(arr)){
-            let arr3 = arr.sort()
-            resolve({arr3,status:200, code: 'Sorted'})
-         }
-      },2000)
-   })
-};
 
 
 const makeAllCaps = (arr) => {
@@ -31,9 +21,21 @@ const makeAllCaps = (arr) => {
       },2000);
    });
 };
- 
+
+function sortWords(arr){
+   return new Promise((resolve,reject)=>{
+      setTimeout(()=>{
+         if(Array.isArray(arr)){
+            let arr3 = arr.sort()
+            resolve({arr3,status:200, code: 'Sorted'})
+         }
+         reject({status:404, code: 'rejected'})
+      },2000)
+   })
+};
+
 makeAllCaps(myarr2)
-   .then((res) => {
+.then((res) => {
       console.log(res.arr2);
       console.log(res.status);
       console.log(res.code);
