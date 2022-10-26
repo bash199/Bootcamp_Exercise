@@ -12,7 +12,7 @@ function sortWords(arr){
       setTimeout(()=>{
          if(Array.isArray(arr)){
             let arr3 = arr.sort()
-            resolve({arr3,status:200, code: 'resolved'})
+            resolve({arr3,status:200, code: 'Sorted'})
          }
       },2000)
    })
@@ -22,26 +22,16 @@ function sortWords(arr){
 const makeAllCaps = (arr) => {
    return new Promise((resolve,reject) =>{
       setTimeout(()=>{
-         let allStrings = true;
-         let arr2 = []
-         for(let element of arr){
-            if(typeof element !== 'string'){
-               allStrings = false;
-            }
-            else{
-               arr2.push(element.toUpperCase())
-            }
+         const isStrings = (e) => typeof e ==='string' ;
+         if(arr.every(isStrings) && Array.isArray(arr)){
+            let arr2 = arr.map(e=>e.toUpperCase())
+            resolve({status:200, code: 'UpperCased',arr2})
          }
-         if(allStrings && Array.isArray(arr)){
-            resolve({status:200, code: 'resolved',arr2})
-         }   
-         else{
-            reject({status:404, code: 'rejected'})
-         }
+         reject({status:404, code: 'rejected'})
       },2000);
    });
 };
-
+ 
 makeAllCaps(myarr2)
    .then((res) => {
       console.log(res.arr2);

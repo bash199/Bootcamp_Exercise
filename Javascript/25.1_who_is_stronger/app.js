@@ -28,5 +28,5 @@ function whoIsStronger(getStrength){
    }
 }
 
-whoIsStronger(hero.getStrength.bind(hero));
-
+console.log(whoIsStronger(hero.getStrength.bind(hero)));
+// whoIsStronger(() =>hero.getStrength.call(hero));
