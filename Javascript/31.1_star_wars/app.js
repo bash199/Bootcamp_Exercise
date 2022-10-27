@@ -19,15 +19,14 @@ async function getData(){
             planet: planet
         })
       }
-      
-      r()
+      makeTable()
    } catch (error) {
       console.log(error);
       console.log('SOMTHING WENT WRONG!!!!!');
    }
 }
 
-function r(){
+function makeTable(){
 const res = myArr.map((el)=>{
    return `<tr>
       <td>${el.name}</td>
