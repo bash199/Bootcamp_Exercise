@@ -1,62 +1,45 @@
-let myArr = [];
-async function getFetch(){
-   const fetched = await fetch('https://swapi.dev/api/people')
-   if(!fetched.ok){
-      throw new Error ;
-   }
-   console.log(fetched);
-   return fetched;
-}
-
+getData()
+const myArr = [];
 async function getData(){
    try {
-      const result = await getFetch()
-      const data = await result.json()
-      fun(data.results)
+      const result = await (await (fetch('https://swapi.dev/api/people'))).json()
+      const pplArray = result.results;
+      console.log(myArr);
+      for(let i=0;i<10;i++){
+        let planetsArr= await (await (fetch(pplArray[i].homeworld))).json()
+        const {name,height,hair_color} =pplArray[i]
+        const planet = {
+            name: planetsArr.name,
+            population: planetsArr.population
+         }
+         myArr.push({
+            name: name,
+            height: height,
+            hair: hair_color,
+            planet: planet
+        })
+      }
+      
+      r()
    } catch (error) {
       console.log(error);
       console.log('SOMTHING WENT WRONG!!!!!');
    }
 }
-let myArr2=[];
 
-function fun(data){
-   const arr = data 
-   for(let el of arr){
-      fetch(el.homeworld)
-      .then(res => {
-         const data = res.json()
-         // console.log(data);
-         return data
-      })
-      .then(res=>{
-         myArr2.push({
-            name: res.name,
-            population: res.population
-         })
-      })
-      .catch((rej)=>{
-         console.log(rej);
-         console.log('somthing wnet wrong');
-      })
-   }
-   myArr2.reverse()
-   for(let el of arr){
-      myArr.push({
-         name: el.name,
-         height: el.height,
-         hair: el.hair_color,
-         planet: ''
-      })
-   }
-   for(let i=0;i<myArr.length;i++){
-      myArr[i]['planet'] = myArr2[i]
-   }
+function r(){
+const res = myArr.map((el)=>{
+   return `<tr>
+      <td>${el.name}</td>
+      <td>${el.hair}</td>
+      <td>${el.height}</td>
+      <td>${el.planet.name}</td>
+      <td>${el.planet.population}</td>
+   </tr>`;
+}).join("");
+
+const table = document.createElement("table");
+table.innerHTML = "<tr><th>name</th><th>hair</th><th>height</th><th>planet name</th><th>planet population</th></tr>";
+table.innerHTML += res;
+document.body.appendChild(table);
 }
-
-let res = myArr.map((ppl, index) => {return  Object.assign({}, ppl, myArr2[index])});
-//* 1. Name ; name
-//* 2. Height ; height
-//* 3. Hair Color ; hair_color
-//* 4. The planet they came from ; homeworld
-//* 5. Planet population ; homeworld.population
