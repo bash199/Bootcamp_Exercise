@@ -836,9 +836,19 @@ const setPropertyBrandToAllCars = (carMarket) => {
 //? @param {number} - toYear - Will display vehicles up to this year
 //? @param {boolean} - isAscendingOrder - true for ascending order, false for descending order (optional)
 //? @return {object[]} - arrayOfModels - array of sorted cars
-const sortAndFilterByYearOfProduction = () => {
-
+const sortAndFilterByYearOfProduction =   (arrOfCars,fromYear,toYear,isAscendingOrder) => {
+  const carYears = arrOfCars.filter((car)=>{
+    return (car.year >=fromYear&&toYear>=car.year)
+  })
+  carYears.sort((a,b)=>{
+    if(!isAscendingOrder){
+      return a.year-b.year
+    }
+    return b.year-a.year
+  })
+  return carYears
 }
+console.log(sortAndFilterByYearOfProduction(ourCarMarket.sellers[3].cars.Toyota,2005,2020,false));
 //* 22. sortAndFilterByPrice
 //?   filter and Sort in a Ascending or Descending order all vehicles for sale by price of the cars.
 //?   @param {object[]} - arrOfCars - array of cars
