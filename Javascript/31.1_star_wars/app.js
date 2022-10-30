@@ -2,12 +2,13 @@ getData()
 const myArr = [];
 async function getData(){
    try {
-      const result = await (await (fetch('https://swapi.dev/api/people'))).json()
+      const ppldata = await fetch('https://swapi.dev/api/people')
+      const result = await ppldata.json()
       const pplArray = result.results;
-      console.log(myArr);
       for(let i=0;i<10;i++){
-        let planetsArr= await (await (fetch(pplArray[i].homeworld))).json()
-        const {name,height,hair_color} =pplArray[i]
+        const plansetData = await fetch(pplArray[i].homeworld)
+        let planetsArr= await plansetData.json()
+        const {name,height,hair_color} = pplArray[i]
         const planet = {
             name: planetsArr.name,
             population: planetsArr.population
@@ -20,7 +21,8 @@ async function getData(){
         })
       }
       makeTable()
-   } catch (error) {
+   } 
+   catch (error) {
       console.log(error);
       console.log('SOMTHING WENT WRONG!!!!!');
    }
@@ -42,3 +44,4 @@ table.innerHTML = "<tr><th>name</th><th>hair</th><th>height</th><th>planet name<
 table.innerHTML += res;
 document.body.appendChild(table);
 }
+

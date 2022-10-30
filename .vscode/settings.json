@@ -3,5 +3,5 @@
    "prettier.bracketSameLine": true,
    "typescript.format.placeOpenBraceOnNewLineForControlBlocks": true,
    "typescript.format.placeOpenBraceOnNewLineForFunctions": true,
-   "liveServer.settings.port": 5501
+   "liveServer.settings.port": 5503
 }
