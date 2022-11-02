@@ -1,0 +1,10 @@
+.box2{
+   width: 400px;
+   height: 400px;
+   background-color: rgb(128, 126, 0);
+   padding: 10px;
+   margin: 5px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
