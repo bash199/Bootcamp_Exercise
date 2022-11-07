@@ -1,0 +1,6 @@
+.Counter{
+   display: flex;
+}
+.Counter>div{
+   margin: 5px;
+}
