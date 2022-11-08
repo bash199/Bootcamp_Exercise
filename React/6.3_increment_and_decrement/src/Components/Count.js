@@ -9,12 +9,13 @@ const Count = ({num}) => {
       else if(0 < n) setColor('green')
       return n 
     }
-
+    const increment = () => setNumber(prevVal => prevVal < 10 ? checkStatus(prevVal + 1 ) : 10);
+    const decrement = () => setNumber(prevVal => prevVal > -10 ? checkStatus(prevVal - 1 ) : -10);
   return (
     <div className='Count'>
       <div>
-      <button onClick={()=>setNumber((prevVal) => prevVal < 10 ? checkStatus(prevVal + 1 ) : 10)}>Increment</button>
-      <button onClick={()=>setNumber((prevVal) => prevVal > -10 ? checkStatus(prevVal - 1 ) : -10)}>Decrement</button>
+      <button onClick={increment}>Increment</button>
+      <button onClick={decrement}>Decrement</button>
       </div>
       <label style={{color:color}}>{number}</label>
     </div>
