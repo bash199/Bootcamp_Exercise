@@ -1,14 +1,6 @@
 import React, {useState, useEffect} from "react";
 import {Routes, Route, Link, useParams} from "react-router-dom";
 import TodoList from "./TodoList";
-import styled from "styled-components";
-const Div = styled.div`
-   background:#008080;
-   color: wheat;
-   width: 100%;
-   height: 100vh;
-
-`;
 const useLocalStorage = (storageKey, fallbackState) => {
    const [value, setValue] = useState(
       JSON.parse(localStorage.getItem(storageKey)) ?? fallbackState
@@ -25,7 +17,7 @@ const App = () => {
    const [inpt, setInpt] = useState("");
 
    return (
-      <Div>
+      <div>
          <center>
             <TodoList
                listOfTodos={listOfTodos}
@@ -34,7 +26,7 @@ const App = () => {
                setInpt={setInpt}
             />
          </center>
-      </Div>
+      </div>
    );
 };
 
