@@ -1,42 +1,61 @@
 import Todo from "./Todo";
+import TodoTitle from "./TodoTitle";
+import styled from "styled-components";
+export const Button = styled.button`
+   margin: 0px 5px;
+   background: whitesmoke;
+   border: 1px solid white;
+   color: teal;
+   border-radius: 2px;
+   cursor: pointer;
+`;
 const TodoList = ({setListOfTodos, listOfTodos, inpt, setInpt}) => {
-   const addTodo = () => {
+   const handleAdd = () => {
       if (inpt) {
          setListOfTodos((prevVal) => {
             return [
                ...prevVal,
                {
                   text: inpt,
+                  done: false,
                },
             ];
          });
          setInpt("");
       }
    };
-   const insertTodos = () => {
-      return listOfTodos.map((item) => {
+   const handleDone = (index) => {
+      setListOfTodos((prevVal) => {
+         return prevVal.map((task, mapIndex) =>
+            mapIndex == index ? {...task, done: !task.done} : task
+         );
+      });
+   };
+   const insertTasks = () => {
+      return listOfTodos.map((item, i) => {
          return (
             <Todo
-               filterListOfTodos={filterListOfTodos}
+               index={i}
+               done={item.done}
+               handleDone={handleDone}
+               handleDelete={handleDelete}
                text={item.text}
-               key={item.text}>
+               key={item.text + i}>
                item.text
             </Todo>
          );
       });
    };
-   const filterListOfTodos = (textOfCurrentClickedTodo) => {
+   const handleDelete = (indexOfCurrentClickedTask) => {
       setListOfTodos(
-         listOfTodos.filter((item) => {
-            return item.text !== textOfCurrentClickedTodo;
+         listOfTodos.filter((item, index) => {
+            return index !== indexOfCurrentClickedTask;
          })
       );
    };
    return (
       <div>
-         <h1>TODO's</h1>
-         <h4>Local Storage CRUD app</h4>
-         <p>CRUD - Create Read Update Delte</p>
+         <TodoTitle />
          <input
             value={inpt}
             onChange={({target}) => {
@@ -45,8 +64,8 @@ const TodoList = ({setListOfTodos, listOfTodos, inpt, setInpt}) => {
             type="text"
             placeholder="Add Todo"
          />
-         <button onClick={addTodo}>Add</button>
-         {insertTodos()}
+         <Button onClick={handleAdd}>Add Task</Button>
+         {insertTasks()}
       </div>
    );
 };

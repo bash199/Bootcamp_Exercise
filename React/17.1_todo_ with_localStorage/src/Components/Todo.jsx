@@ -1,18 +1,19 @@
 import React from "react";
-
-const Todo = ({text, filterListOfTodos}) => {
+import {Button} from "./TodoList";
+const Todo = ({text, handleDelete, done, handleDone, index}) => {
    return (
       <div style={{marginTop: "10px"}}>
-         <input type="checkBox" />
-         <p style={{display: "inline-block", margin: "0 15px 0 5px"}}>
-            - {text}
+         <p
+            onClick={() => handleDone(index)}
+            style={{display: "inline-block", margin: "0 15px 0 5px"}}>
+            {done ? <>&#x2713;</> : <>&#10005;</>}- {text}
          </p>
-         <button
+         <Button
             onClick={() => {
-               filterListOfTodos(text);
+               handleDelete(index);
             }}>
             Delete
-         </button>
+         </Button>
       </div>
    );
 };
