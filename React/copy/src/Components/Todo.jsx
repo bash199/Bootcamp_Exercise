@@ -31,7 +31,6 @@ const Todo = ({
    editInput,
 }) => {
    const [editDone, setEditDone] = useState(false);
-   // handleDone(id, model)
    return (
       <Div>
          <P onClick={() => setEditDone((prev) => true)}>{model}</P>
