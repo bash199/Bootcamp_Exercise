@@ -1,4 +1,6 @@
+import {useState} from "react";
 import styled from "styled-components";
+import Todo from "./todo/Todo";
 
 const AppBox = styled.div`
    background-color: #282c34;
@@ -12,6 +14,14 @@ const AppBox = styled.div`
 `;
 
 const App = () => {
-   return <AppBox></AppBox>;
+
+
+   
+
+   return (
+      <AppBox>
+         <Todo />
+      </AppBox>
+   );
 };
 export default App;
