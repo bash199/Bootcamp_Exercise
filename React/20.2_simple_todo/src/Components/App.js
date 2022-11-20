@@ -1,6 +1,5 @@
-import {useState} from "react";
 import styled from "styled-components";
-import Todo from "./todo/Todo";
+import Todo from "./Todo";
 
 const AppBox = styled.div`
    background-color: #282c34;
@@ -14,10 +13,6 @@ const AppBox = styled.div`
 `;
 
 const App = () => {
-
-
-   
-
    return (
       <AppBox>
          <Todo />

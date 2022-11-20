@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Time from "./Time";
 
 const AppBox = styled.div`
    background-color: #282c34;
@@ -12,6 +13,10 @@ const AppBox = styled.div`
 `;
 
 const App = () => {
-   return <AppBox></AppBox>;
+   return (
+      <AppBox>
+         <Time />
+      </AppBox>
+   );
 };
 export default App;
