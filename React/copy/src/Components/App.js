@@ -1,22 +1,26 @@
-import styled from "styled-components";
-import Time from "./Time";
-
-const AppBox = styled.div`
-   background-color: #282c34;
-   min-height: 100vh;
-   display: flex;
-   align-items: center;
-   flex-direction: column;
-   justify-content: center;
-   font-size: calc(10px + 2vmin);
-   color: white;
-`;
+import React from "react";
+import {useFetch} from "./UseFetch";
 
 const App = () => {
+   const [data, isLOading, error] = useFetch(
+      "https://api.chucknorris.io/jokes/random"
+   );
+
+   const [data2, isLOading2, error2] = useFetch(
+      "https://6377843f5c477765121fffdd.mockapi.io/shoe"
+   );
+
    return (
-      <AppBox>
-         <Time />
-      </AppBox>
+      <div>
+         <p>{data && data.value}</p>
+         {isLOading && <h1>Spinner</h1>}
+         <p>{error && error.message}</p>
+         {data2 &&
+            data2.map((el) => {
+               return <h2 key={el.id}>{el.brand}</h2>;
+            })}
+      </div>
    );
 };
+
 export default App;
