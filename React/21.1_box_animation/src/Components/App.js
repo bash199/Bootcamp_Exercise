@@ -1,10 +1,10 @@
 import React from "react";
-import Countries from "./Countries";
+import Box from "./Box";
 
 const App = () => {
    return (
       <div>
-         <Countries  />
+         <Box />
       </div>
    );
 };
