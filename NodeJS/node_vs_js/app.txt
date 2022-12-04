@@ -1,0 +1,19 @@
+ 3 things node.js has that the client side javascript doesn’t 
+have:
+1. the golbal varibale, js vanilla doesnt have the global varibale because it has the dom instead of the global varibale.
+
+2. runs js code on the server side , unlike client side javascript that runs only
+on a browser 
+
+3.NodeJS is a Javascript runtime environment.
+
+
+
+
+3 things the client side javascript has that node.js doesn’t 
+have:
+1. the document.queryselector , node.js doesnt have the "document.queryselector" because it has no dom (document object module) . 
+
+2.can add HTML tags, because there is a dom to implement to it. 
+
+3. it is a programming  language that is used for writing scripts on the website.
