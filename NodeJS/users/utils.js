@@ -7,7 +7,7 @@ const addUser = (name, email) => {
    const duplicatedUsers = users.filter((user) => {
       return user.name === name;
    });
-   if (duplicatedUsers.length === 0) {
+   if (!duplicatedUsers.length) {
       users.push({
          id: uniqid(),
          name: name,
