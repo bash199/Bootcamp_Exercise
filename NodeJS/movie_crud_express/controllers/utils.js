@@ -1,4 +1,5 @@
 import {readFile, writeFile, readFileSync} from "fs";
+import uniqid from "uniqid";
 import path from "path";
 import * as url from "url";
 
@@ -56,10 +57,12 @@ const loadMovies = () => {
 
 export const createMovie = (req, res) => {
    try {
-      const movies = loadMovies();
-      const newMovies = [...movies, req.body];
+      const oldMovies = loadMovies();
+      const id = uniqid();
+      const newMovie = {...req.body, id};
+      const newMovies = [...oldMovies, newMovie];
       saveMovies(newMovies);
-      res.status(200).send(req.body);
+      res.status(200).send(newMovie);
    } catch (error) {
       res.send(error);
    }
@@ -69,11 +72,10 @@ export const deleteMovie = (req, res) => {
    try {
       const {id} = req.params;
       const movies = loadMovies();
-      const newMovies = movies.filter((movie) => {
-         return movie.id !== id;
-      });
-      saveMovies(newMovies);
-      res.status(200).send(newMovies);
+      const oldMovies = movies.filter((movie) => movie.id !== id);
+      const deletedMovie = movies.find((movie) => movie.id === id);
+      saveMovies(oldMovies);
+      res.status(200).send(deletedMovie);
    } catch (error) {
       res.status(404).send(`wrong id / not found, ${error}`);
    }
@@ -86,8 +88,9 @@ export const updateMovieByid = (req, res) => {
       const newMovies = movies.map((movie) => {
          return movie.id === id ? {...movie, ...req.body} : movie;
       });
+      const movie = {...req.body, id};
       saveMovies(newMovies);
-      res.status(201).send(res.body);
+      res.status(201).send(movie);
    } catch (error) {
       res.status(404).send(error);
    }
