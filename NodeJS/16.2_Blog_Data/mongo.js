@@ -29,7 +29,7 @@ async function main() {
          posts: [],
       },
    ]);
-   // console.log('Inserted Users =>', insertUsers);
+   // console.log("Inserted Users =>", insertUsers);
    const insertPosts = await posts.insertMany([
       {
          title: "the cat ate my paper work",
@@ -44,15 +44,15 @@ async function main() {
    ]);
 
    await users.updateOne(
-     {_id: ObjectId(insertUsers.insertedIds["1"])},
+      {_id: ObjectId(insertUsers.insertedIds["1"])},
       {
          $set: {
             posts: [insertPosts.insertedIds["0"], insertPosts.insertedIds["1"]],
          },
       }
    );
-   // console.log('Inserted Posts =>', insertPosts.insertedIds["0"]);
-   const insertComments = await comments.insertMany([
+   // console.log("Inserted Posts =>", insertPosts.insertedIds["0"]);
+   const {insertedIds} = await comments.insertMany([
       {
          text: "hahaha what a bad luck",
       },
@@ -64,18 +64,25 @@ async function main() {
       {_id: ObjectId(insertPosts.insertedIds["0"])},
       {
          $set: {
-            comments: [
-               insertComments.insertedIds["0"],
-               insertComments.insertedIds["1"],
-         ]
+            comments: [insertedIds["0"], insertedIds["1"]],
          },
       }
    );
-  console.log(await users.findOne({ _id : ObjectId(insertUsers.insertedIds["1"]) } ) )
-  console.log(await posts.findOne( { _id : ObjectId(insertPosts.insertedIds["0"]) } ) )
-  console.log(await posts.findOne( { _id : ObjectId(insertPosts.insertedIds["1"]) } ) )
-  console.log(await comments.findOne({ _id : ObjectId(insertComments.insertedIds["0"]) } ) )
-  console.log(await comments.findOne({ _id : ObjectId( insertComments.insertedIds["1"]) } ) )
-
+   // console.log(
+   //    await users.findOne({_id: ObjectId(insertUsers.insertedIds["1"])})
+   // );
+   // console.log(
+   //    await posts.findOne({_id: ObjectId(insertPosts.insertedIds["0"])})
+   // );
+   // console.log(
+   //    await posts.findOne({_id: ObjectId(insertPosts.insertedIds["1"])})
+   // );
+   // console.log(
+   //    await comments.findOne({_id: ObjectId(insertComments.insertedIds["0"])})
+   // );
+   // console.log(
+   //    await comments.findOne({_id: ObjectId(insertComments.insertedIds["1"])})
+   // );
 }
-// main();
+main();
+                                                              
