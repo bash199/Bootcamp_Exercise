@@ -4,6 +4,9 @@ import {
    getAProductFromMongoose,
    getActiveProductsFromMongoose,
    getByPriceRangeFromMongoose,
+   updateProductFromMongoose,
+   deleteProductFromMongoose,
+   deleteAllProductsFromMongoose,
 } from "../services/product.mongoose.js";
 
 export const addProduct = async (req, res) => {
@@ -40,7 +43,7 @@ const getActiveProducts = async (req, res) => {
       const Product = await getActiveProductsFromMongoose();
       res.status(200).send(Product);
    } catch (err) {
-      res.status(204).send("error" + err);
+      res.status(404).send("error" + err);
    }
 };
 
@@ -52,7 +55,7 @@ const getByPriceRange = async (req, res) => {
       );
       res.status(200).send(Product);
    } catch (error) {
-      res.status(204).send("error" + error);
+      res.status(404).send("error" + error);
    }
 };
 
@@ -63,4 +66,38 @@ export const getBy = (req, res) => {
       return getActiveProducts(req, res);
    }
    return getProduct(req, res);
+};
+
+export const updateById = async (req, res) => {
+   const {id} = req.params;
+   try {
+      const Product = await updateProductFromMongoose(
+         id,
+         req.body.active,
+         req.body.discount
+      );
+      res.status(200).send(Product);
+   } catch (error) {
+      res.status(404).send("error" + error);
+   }
+};
+
+export const deletebyId = async (req, res) => {
+   const {id} = req.params;
+   try {
+      const Product = await deleteProductFromMongoose(id);
+      res.status(200).send(Product);
+   } catch (error) {
+      res.status(404).send("error" + error);
+   }
+};
+
+export const deleteAllProducts = async (req, res) => {
+   const {id} = req.params;
+   try {
+      const Product = await deleteAllProductsFromMongoose(id);
+      res.status(200).send(Product);
+   } catch (error) {
+      res.status(404).send("error" + error);
+   }
 };

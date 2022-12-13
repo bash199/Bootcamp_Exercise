@@ -1,8 +1,9 @@
 import express, {json} from "express";
-import "./db/mongoose.js";
-import {indexProduct} from "./routes/routes.js";
+import './db/mongoose.js'
+import { indexProduct } from "./routes/routes.js";
+
 const app = express();
-const PORT = 8001;
+const PORT = 8000;
 
 app.use(json());
 
