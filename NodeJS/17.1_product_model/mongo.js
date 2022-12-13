@@ -1,11 +1,11 @@
-import {connect, model, set} from "mongoose";
+import {connect, model, set, Schema} from "mongoose";
 import validator from "validator";
 set("strictQuery", true);
 connect("mongodb://127.0.0.1:27017/e-commerce-api", () => {
    console.log("connected to server...");
 });
 
-const Product = model("Product", {
+const productSchema = new Schema({
    name: {
       type: String,
       required: true,
@@ -59,6 +59,8 @@ const Product = model("Product", {
       dateAdded: {type: Date, default: Date.now},
    },
 });
+const Product = model("Product", productSchema);
+
 const shirt = new Product({
    name: "cool shirt",
    category: "t-shirts",
@@ -97,6 +99,7 @@ const pants = new Product({
       phoneNumber: "+972528557740",
    },
 });
+
 // pants
 //    .save()
 //    .then(() => {
